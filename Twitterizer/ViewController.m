@@ -52,9 +52,24 @@
     NSInteger count = self.textView.text.length;
     NSString *countValue = [NSString stringWithFormat:@"%lu", count];
     self.label.text = countValue;
+    
+    if (count >  139) {
+        textView.text = [textView.text substringToIndex:textView.text.length - 1];
+    }
 }
-
-
+- (IBAction)onPressHashTag:(UIButton *)sender {
+    NSMutableString *hashText = [NSMutableString new];
+    hashText = [NSMutableString stringWithString:self.textView.text];
+    NSInteger spaces = self.textView.text.length;
+    NSString *spaceCount
+    
+    [hashText replaceOccurrencesOfString:@" " withString:@" #" options:0 range:NSMakeRange(0, hashText.length)];
+    self.textView.text = [NSString stringWithFormat:@"#%@", hashText];
+    
+    
+    // self.textView.text = [NSString stringWithFormat:@"#%@", self.textView.text];
+    
+}
     
 
 @end
