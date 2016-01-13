@@ -22,12 +22,18 @@
 - (IBAction)twitterize:(UIButton *)sender
 {
     NSString *twitterizedText = self.textView.text;
+    NSCharacterSet *characterSet = 
+    
     NSMutableString *mutableText = [NSMutableString new];
     NSInteger length = twitterizedText.length;
     for (int i = 0; i < length; i++) {
-        if ([twitterizedText characterAtIndex:i] == ) {
-            <#statements#>
+    NSString *character = [NSString stringWithFormat:@"%c", [twitterizedText characterAtIndex:i]];
+        if ([NSCharacterSet twitterizedText])  [NSCharacterSet characterSetWithCharactersInString:@"aeiou"];
+            
+            NSRange r;
         }
+      
+    
     }
     
 //    NSString *character = [NSString stringWithFormat:@"%c", [firstPart characterAtIndex:i - 1]];
